@@ -29,9 +29,9 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    iAuto_upload: {
+    iauto_upload: {
       default_options: {
-        options: pkg.iAuto,
+        options: pkg.iauto,
         files: {
           'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
         },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'iAuto_upload', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'iauto_upload', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

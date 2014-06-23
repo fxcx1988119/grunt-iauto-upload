@@ -1,7 +1,7 @@
 {
   "name": "grunt-iauto-upload",
   "description": "upload file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/huixisheng/grunt-test",
   "author": {
     "name": "huixisheng",
@@ -39,7 +39,7 @@
   "keywords": [
     "gruntplugin"
   ],
-  "iAuto": {
+  "iauto": {
     "user_name": "",
     "password": "",
     "addDir": [{

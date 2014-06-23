@@ -1,5 +1,5 @@
 /*
- * grunt-iAuto-upload
+ * grunt-iauto-upload
  * https://github.com/huixisheng/grunt-test
  *
  * Copyright (c) 2014 huixisheng
@@ -16,7 +16,7 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('iAuto_upload', 'upload file', function() {
+  grunt.registerMultiTask('iauto_upload', 'upload file', function() {
     var done = this.async();
     var options = this.options({
       password: '',
