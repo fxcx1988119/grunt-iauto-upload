@@ -1,23 +1,24 @@
 {
-  "name": "grunt-async",
-  "description": "The best Grunt plugin ever.",
+  "name": "grunt-iAuto-upload",
+  "description": "upload file",
   "version": "0.1.0",
-  "homepage": "https://github.com/huixisheng/grunt-async",
+  "homepage": "https://github.com/huixisheng/grunt-test",
   "author": {
     "name": "huixisheng",
-    "email": "469184346@qq.com"
+    "email": "469184346@qq.com",
+    "url": "http://huixisheng.github.io/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/huixisheng/grunt-async.git"
+    "url": "git://github.com/huixisheng/grunt-test.git"
   },
   "bugs": {
-    "url": "https://github.com/huixisheng/grunt-async/issues"
+    "url": "https://github.com/huixisheng/grunt-test/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/huixisheng/grunt-async/blob/master/LICENSE-MIT"
+      "url": "https://github.com/huixisheng/grunt-test/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
@@ -27,9 +28,9 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "^0.9.2",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
     "grunt": "~0.4.5"
   },
   "peerDependencies": {
@@ -37,5 +38,17 @@
   },
   "keywords": [
     "gruntplugin"
-  ]
+  ],
+  "iAuto": {
+    "user_name": "",
+    "password": "",
+    "addDir": [{
+      "name": "test3",
+      "path": "/html/s/ued"
+    }],
+    "uploadFile": [{
+      "uploadFilePath": "dist/3.0.20.zip", 
+      "uploadPath": "/html/s/ued/test3" 
+    }]
+  }
 }

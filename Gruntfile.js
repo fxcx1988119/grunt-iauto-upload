@@ -1,6 +1,6 @@
 /*
- * grunt-async
- * https://github.com/huixisheng/grunt-async
+ * grunt-iAuto-upload
+ * https://github.com/huixisheng/grunt-test
  *
  * Copyright (c) 2014 huixisheng
  * Licensed under the MIT license.
@@ -9,49 +9,39 @@
 'use strict';
 
 module.exports = function(grunt) {
-
+  var pkg = grunt.file.readJSON('package.json');
   // Project configuration.
   grunt.initConfig({
     jshint: {
       all: [
         'Gruntfile.js',
         'tasks/*.js',
-        '<%= nodeunit.tests %>'
+        '<%= nodeunit.tests %>',
       ],
       options: {
-        jshintrc: '.jshintrc'
-      }
+        jshintrc: '.jshintrc',
+      },
     },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      tests: ['tmp']
+      tests: ['tmp'],
     },
 
     // Configuration to be run (and then tested).
-    async: {
+    iAuto_upload: {
       default_options: {
-        options: {
-        },
+        options: pkg.iAuto,
         files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
+        },
       },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
-      }
     },
 
     // Unit tests.
     nodeunit: {
-      tests: ['test/*_test.js']
-    }
+      tests: ['test/*_test.js'],
+    },
 
   });
 
@@ -65,7 +55,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'async', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'iAuto_upload', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
