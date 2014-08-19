@@ -46,18 +46,43 @@ module.exports = function(grunt) {
     /**
      * @todo  添加异常的判断和多个目录
      */
-    
-    deploy.addDir({
-      'name': addDir[0]['name'],
-      'path': addDir[0]['path']
-    }, function(){
-        deploy.uploadFile({
-            uploadFilePath: uploadFile[0]['uploadFilePath'],
-            uploadPath: uploadFile[0]['uploadPath']
-        }, function(){
-          done();
-        });
-    });
+    var addDirLen = addDir.length;
+    var uploadFileLen = uploadFile.length;
+    for(var i = 0; i < addDirLen; i++){
+      (function(i){
+        if(i === addDirLen - 1 ){
+          deploy.addDir({
+            'name': addDir[i]['name'],
+            'path': addDir[i]['path']
+          }, function(){
+              for(var j = 0; j < uploadFileLen; j++){
+                (function(j){
+                    deploy.uploadFile({
+                        uploadFilePath: uploadFile[j]['uploadFilePath'],
+                        uploadPath: uploadFile[j]['uploadPath']
+                    }, function(){
+                      if(j === uploadFileLen - 1 ){
+                        done();  
+                      } else {
+                        console.log("上传" + uploadFile[j]['uploadFilePath'] + '成功');
+                      }
+                      
+                    });
+                })(j);
+              }
+          });
+        } else {
+          deploy.addDir({
+            'name': addDir[i]['name'],
+            'path': addDir[i]['path']
+          }, function(){
+            console.log("创建" + addDir[i]['name'] + '成功');
+          });
+        }
+
+      })(i);
+    }
+
   });
 
 };

@@ -1,7 +1,7 @@
 {
   "name": "grunt-iauto-upload",
   "description": "upload file",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/huixisheng/grunt-test",
   "author": {
     "name": "huixisheng",
@@ -43,12 +43,18 @@
     "user_name": "",
     "password": "",
     "addDir": [{
-      "name": "test3",
+      "name": "test4",
+      "path": "/html/s/ued"
+    },{
+      "name": "test5",
       "path": "/html/s/ued"
     }],
     "uploadFile": [{
-      "uploadFilePath": "dist/3.0.20.zip", 
-      "uploadPath": "/html/s/ued/test3" 
+      "uploadFilePath": "upfile/test4/index4.css", 
+      "uploadPath": "/html/s/ued/test4" 
+    },{
+      "uploadFilePath": "upfile/test5/index5.css", 
+      "uploadPath": "/html/s/ued/test5" 
     }]
   }
 }

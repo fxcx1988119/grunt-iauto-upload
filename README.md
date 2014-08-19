@@ -19,13 +19,10 @@ grunt.loadNpmTasks('grunt-iauto-upload');
 
 ```js
 grunt.initConfig({
-  md5_plus: {
+  iauto_upload: {
 	options: {
-	  // Task-specific options go here.
-	},
-	your_target: {
-	  // Target-specific file lists and/or options go here.
-	},
+	  options: pkg.iauto
+	}
   },
 });
 ```
@@ -35,11 +32,11 @@ grunt.initConfig({
 	iauto: {
 		password: '',
 		user_name: '',
-		addDir:[{ // 目前只只支持新建一个目录
+		addDir:[{ // 支持创建多个目录
 			name: '', //要新建的文件夹的名字
 			path: ''// 在什么目录下新建文件夹 
 		}],
-		uploadFile:[{ // 目前只只支持上传一次文件
+		uploadFile:[{ // 支持上传多个文件
 			uploadFilePath: '', // 上传的文件路径
 			uploadPath: '' // 上传到什么目录下
 		}]
@@ -47,7 +44,7 @@ grunt.initConfig({
 
 
 
-### todo
-1. 添加异常的判断,多个目录
+### Todo
+1. ~~添加异常的判断,多个目录~~
 2. 添加单元测试
 
